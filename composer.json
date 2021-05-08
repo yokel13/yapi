@@ -1,5 +1,5 @@
 {
-  "name": "yokel13/yapi",
+  "name": "yokel/yapi",
   "type": "library",
   "description": "REST-like API library for Bitrix",
   "license": "MIT",
@@ -18,6 +18,5 @@
     "psr-4": {
       "Yapi\\": "/src"
     }
-  },
-  "minimum-stability": "dev"
+  }
 }
