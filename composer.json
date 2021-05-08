@@ -1,0 +1,22 @@
+{
+  "name": "yokel/yapi",
+  "type": "library",
+  "description": "REST-like API library for Bitrix",
+  "license": "MIT",
+  "keywords": ["php", "bitrix", "api", "rest-api"],
+  "authors": [
+    {
+      "name": "Andrey Konovalov",
+      "email": "hello@yokel.tech"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "bramus/router": "~1.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Yapi\\": "/src"
+    }
+  }
+}
