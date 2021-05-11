@@ -48,6 +48,21 @@ class Yapi {
     private $beforeAction = null;
 
     /**
+     * @var string Контроллер
+     */
+    private $controller = null;
+
+    /**
+     * @var string Метод
+     */
+    private $method = null;
+
+    /**
+     * @var string Формат данных
+     */
+    private $format = null;
+
+    /**
      * @var array Допустимые тип запросов (Access-Control-Allow-Methods)
      */
     private $allowMethods = [
@@ -165,6 +180,48 @@ class Yapi {
      */
     public function setAllowHeaders(array $allowHeaders) {
         $this->allowHeaders = array_merge($this->allowHeaders, $allowHeaders);
+    }
+
+    /**
+     * @return string
+     */
+    public function getController(): string {
+        return $this->controller;
+    }
+
+    /**
+     * @param string $controller
+     */
+    public function setController(string $controller) {
+        $this->controller = $controller;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMethod(): string {
+        return $this->method;
+    }
+
+    /**
+     * @param string $method
+     */
+    public function setMethod(string $method) {
+        $this->method = $method;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFormat(): string {
+        return $this->format;
+    }
+
+    /**
+     * @param string $format
+     */
+    public function setFormat(string $format) {
+        $this->format = $format;
     }
 
 }

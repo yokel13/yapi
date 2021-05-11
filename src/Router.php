@@ -88,6 +88,9 @@ class Router {
     public function serve($controllerName, $method, $format) {
         // var
         $yapi = Yapi::getInstance();
+        $yapi->setController($controllerName);
+        $yapi->setMethod($method);
+        $yapi->setFormat($format);
 
         // CORS
         Http::setHeaders([
