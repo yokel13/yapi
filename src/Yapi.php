@@ -100,6 +100,9 @@ class Yapi {
      * @param callable|null $beforeAction
      */
     public function run($routes = [], $basePath = false, $beforeAction = null) {
+        // не запускаем в админке
+        if (\CSite::InDir('/bitrix/')) return;
+
         EventManager::registerEvents();
 
         $this->routes = $routes;
