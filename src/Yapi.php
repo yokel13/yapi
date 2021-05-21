@@ -82,6 +82,16 @@ class Yapi {
     ];
 
     /**
+     * Определяет, находимся ли мы в админке Битрикса
+     * @return bool
+     */
+    private function inAdminSection() {
+        $request = \Bitrix\Main\Context::getCurrent()->getRequest();
+        $requestedDir = $request->getRequestedPageDirectory();
+        return stripos($requestedDir, '/bitrix') !== false;
+    }
+
+    /**
      * Singleton
      * @return null|Yapi
      */
@@ -101,7 +111,7 @@ class Yapi {
      */
     public function run($routes = [], $basePath = false, $beforeAction = null) {
         // не запускаем в админке
-        if (\CSite::InDir('/bitrix/')) return;
+        if ($this->inAdminSection()) return;
 
         EventManager::registerEvents();
 

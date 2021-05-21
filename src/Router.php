@@ -76,6 +76,11 @@ class Router {
         // rules
         $router->all($yapi->getBasePath().'(\w+)/(\w+).([a-z]+)', '\Yapi\Router@serve');
 
+        // не устанавливаем статус 404, если маршрут не найден
+        $router->set404(function () {
+            return;
+        });
+
         $router->run();
     }
 
