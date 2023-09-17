@@ -63,7 +63,7 @@ class Router {
     /**
      * Запускает роутинг
      */
-    public function run() {
+    public static function run() {
         // var
         $yapi = Yapi::getInstance();
         self::$controllers = $yapi->getRoutes();
